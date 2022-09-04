@@ -19,7 +19,13 @@ rm:
 logs:
 	$(dc) logs -f
 
-app:
-	$(dc) exec app /bin/sh
+api:
+	$(dc) exec api /bin/sh
 
-.PHONY:	setup up down restart reup rm logs app db
+cache:
+	$(dc) exec cache /bin/sh
+
+web:
+	$(dc) exec web /bin/sh
+
+.PHONY:	setup up down restart reup rm logs api cache web
