@@ -11,6 +11,16 @@ services:
     ports:
       - '8080:8080'
 
+  cache:
+    build: ./varnish
+    container_name: cache
+    ports:
+      - '80:80'
+    volumes:
+      - ./varnish/default.vcl:/etc/varnish/default.vcl
+    depends_on:
+      - api
+
   web:
     build:
       context: ../eccSchoolApp-web
@@ -21,6 +31,6 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - REACT_APP_API_URL=http://localhost:8080
+      - REACT_APP_API_URL=http://localhost:80
     depends_on:
-      - api
+      - cache
