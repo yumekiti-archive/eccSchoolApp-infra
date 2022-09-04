@@ -1,4 +1,4 @@
-dc := docker-compose -f ./docker-compose.yml
+dc := docker-compose -f ./docker/docker-compose.yml
 
 up:
 	$(dc) up -d
