@@ -1,0 +1,6 @@
+[submodule "eccSchoolApp-api"]
+	path = eccSchoolApp-api
+	url = git@github.com:yumekiti/eccSchoolApp-api.git
+[submodule "eccSchoolApp-web"]
+	path = eccSchoolApp-web
+	url = git@github.com:yumekiti/eccSchoolApp-web.git
